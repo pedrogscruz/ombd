@@ -13,7 +13,7 @@ type IProps = {
 
 class MovieTable extends Component<{OmbdStore?: store} & IProps> {
   handleCardClick = () => this.props.OmbdStore!.selectedMovie = this.props.movie;
-  
+
   render() {
     const { movie } = this.props, { Poster, Title, Year } = movie;
     return (
@@ -27,6 +27,7 @@ class MovieTable extends Component<{OmbdStore?: store} & IProps> {
           verticalAlign: 'middle'
         }}
         cover={<img src={Poster} />}
+        onClick={this.handleCardClick}
       >
         <Meta title={Title} description={Year} />
       </Card>
